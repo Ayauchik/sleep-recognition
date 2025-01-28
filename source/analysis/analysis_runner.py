@@ -106,11 +106,11 @@ def figures_mc_three_class():
 
 
 def figures_mesa_sleep_wake():
-    classifiers = utils.get_classifiers()
+    # classifiers = utils.get_classifiers()
     # Uncomment to just use MLP:
-    # classifiers = [AttributedClassifier(name='Neural Net',
-    #                                     classifier=MLPClassifier(activation='relu', hidden_layer_sizes=(15, 15, 15),
-    #                                                              max_iter=1000, alpha=0.01, solver='lbfgs'))]
+    classifiers = [AttributedClassifier(name='Neural Net',
+                                        classifier=MLPClassifier(activation='relu', hidden_layer_sizes=(15, 15, 15),
+                                                                 max_iter=1000, alpha=0.01, solver='lbfgs'))]
 
     feature_sets = utils.get_base_feature_sets()
 
@@ -183,7 +183,7 @@ def figures_compare_time_based_features():
 
 if __name__ == "__main__":
     start_time = time.time()
-    figure_leave_one_out_roc_and_pr()
+    # figure_leave_one_out_roc_and_pr()
     #
     # figures_mc_sleep_wake()
     # figures_mc_three_class()
@@ -191,10 +191,10 @@ if __name__ == "__main__":
     # figures_leave_one_out_sleep_wake_performance()
     # figures_leave_one_out_three_class_performance()
     #
-    # figures_mesa_sleep_wake()
+    figures_mesa_sleep_wake()
     # figures_mesa_three_class()
     #
-    # figures_compare_time_based_features()
+    figures_compare_time_based_features()
     end_time = time.time()
 
     print('Elapsed time to generate figure: ' + str((end_time - start_time) / 60) + ' minutes')
